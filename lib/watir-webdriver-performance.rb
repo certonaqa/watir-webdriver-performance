@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'json'
 module Watir
 
   # Adds helper for window.performance to Watir::Browser.
