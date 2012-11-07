@@ -1,11 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe "WatirWebdriverPerformance" do
+describe "Watir Webdriver IE Performance" do
 
   let!(:b) { @b }
 
   before(:all) do
-    @b ||= Watir::Browser.new
+    @b ||= Watir::Browser.new :ie
   end
 
   after(:all) do
@@ -41,6 +41,7 @@ describe "WatirWebdriverPerformance" do
 
   it "should support performance as block" do
     b.goto "google.com"
+    puts b.performance
     puts b.with_performance
     b.with_performance {|performance| performance.should_not be_nil }
   end
